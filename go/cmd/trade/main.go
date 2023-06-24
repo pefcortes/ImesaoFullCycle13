@@ -6,10 +6,10 @@ import (
 	"sync"
 
 	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
-	"github.com/devfullcycle/imersao13/go/internal/infra/kafka"
-	"github.com/devfullcycle/imersao13/go/internal/market/dto"
-	"github.com/devfullcycle/imersao13/go/internal/market/entity"
-	"github.com/devfullcycle/imersao13/go/internal/market/transformer"
+	"github.com/pefcortes/ImesaoFullCycle13/go/internal/infra/kafka"
+	"github.com/pefcortes/ImesaoFullCycle13/go/internal/market/dto"
+	"github.com/pefcortes/ImesaoFullCycle13/go/internal/market/entity"
+	"github.com/pefcortes/ImesaoFullCycle13/go/internal/market/transformer"
 )
 
 func main() {
@@ -20,7 +20,7 @@ func main() {
 
 	kafkaMsgChan := make(chan *ckafka.Message)
 	configMap := &ckafka.ConfigMap{
-		"bootstrap.servers": "host.docker.internal:9094",
+		"bootstrap.servers": "192.168.1.2:9094",
 		"group.id":          "myGroup",
 		"auto.offset.reset": "latest",
 	}
